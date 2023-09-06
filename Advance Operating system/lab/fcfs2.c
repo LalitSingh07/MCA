@@ -1,41 +1,12 @@
+
 #include <stdio.h>
 
-void findWaitingTime(int n, int bt[], int wt[], int at[]) {
-    int service_time[n];
-    service_time[0] = at[0];
-
-  
-    for (int i = 1; i < n; i++) {
-        service_time[i] = service_time[i - 1] + bt[i - 1];
-    }
-
-    for (int i = 0; i < n; i++) {
-        wt[i] = service_time[i] - at[i];
-       
-    }
-}
-
-
-
-
-void findTurnaroundTime(int n, int bt[], int wt[], int tat[]) {
-    
-    for (int i = 0; i < n; i++) {
-        tat[i] = bt[i] + wt[i];
-    }
-}
-
-
-
-
-
-void findAverageTime(int processes[], int n, int bt[], int at[]) {
+void calcAvgTime(int processes[], int n, int bt[], int at[]) {
     int wt[n], tat[n];
 
-    findWaitingTime(n, bt, wt, at);
+    getWaitTime(n, bt, wt, at);
 
-    findTurnaroundTime(n, bt, wt, tat);
-
+    getTurnTime(n, bt, wt, tat);
 
     float avg_wt = 0, avg_tat = 0;
     for (int i = 0; i < n; i++) {
@@ -45,13 +16,31 @@ void findAverageTime(int processes[], int n, int bt[], int at[]) {
     avg_wt /= n;
     avg_tat /= n;
 
- 
     printf("Process\tArrival Time\tBurst Time\tWaiting Time\tTurnaround Time\n");
     for (int i = 0; i < n; i++) {
         printf("%d\t%d\t\t%d\t\t%d\t\t%d\n", processes[i], at[i], bt[i], wt[i], tat[i]);
     }
     printf("Average Waiting Time: %.2f\n", avg_wt);
     printf("Average Turnaround Time: %.2f\n", avg_tat);
+}
+
+void getWaitTime(int n, int bt[], int wt[], int at[]) {
+    int service_time[n];
+    service_time[0] = at[0];
+
+    for (int i = 1; i < n; i++) {
+        service_time[i] = service_time[i - 1] + bt[i - 1];
+    }
+
+    for (int i = 0; i < n; i++) {
+        wt[i] = service_time[i] - at[i];
+    }
+}
+
+void getTurnTime(int n, int bt[], int wt[], int tat[]) {
+    for (int i = 0; i < n; i++) {
+        tat[i] = bt[i] + wt[i];
+    }
 }
 
 int main() {
@@ -74,7 +63,7 @@ int main() {
         processes[i] = i + 1;
     }
 
-    findAverageTime(processes, n, burst_time, arrival_time);
+    calcAvgTime(processes, n, burst_time, arrival_time);
 
     return 0;
 }
