@@ -15,9 +15,9 @@ void find(struct process p[], int n)
  p[0].wt = p[0].tat - p[0].bt;
  for (int i = 1; i < n; i++)
  {
- p[i].ct = p[i - 1].ct + p[i].bt; // Completion time at each iteration
- p[i].tat = p[i].ct - p[i].at; // Turnaround time
- p[i].wt = p[i].tat - p[i].bt; // Wait time
+ p[i].ct = p[i - 1].ct + p[i].bt; 
+ p[i].tat = p[i].ct - p[i].at; 
+ p[i].wt = p[i].tat - p[i].bt; 
  }
 }
 void display(struct process p[], int n)
