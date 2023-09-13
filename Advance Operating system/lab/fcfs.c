@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h> // for exit(0)
+#include <stdlib.h> 
 struct process
 {
  int at;
@@ -10,6 +10,7 @@ struct process
 };
 void find(struct process p[], int n)
 {
+
  p[0].ct = p[0].at + p[0].bt;
  p[0].tat = p[0].ct - p[0].at;
  p[0].wt = p[0].tat - p[0].bt;
@@ -19,6 +20,7 @@ void find(struct process p[], int n)
  p[i].tat = p[i].ct - p[i].at; 
  p[i].wt = p[i].tat - p[i].bt; 
  }
+
 }
 void display(struct process p[], int n)
 {
@@ -35,6 +37,7 @@ void display(struct process p[], int n)
  printf("\nTurn Around Time for Pocess%d:%d", i + 1, p[i].tat);
  printf("\n Wait Time for Process%d:%d", i + 1, p[i].wt);
  }
+ Average_display(p, n);
 }
 void tablewise_display(struct process p[], int n)
 {
@@ -44,10 +47,27 @@ void tablewise_display(struct process p[], int n)
 printf("%d\t%d\t\t%d\t\t%d\t\t%d\t\t%d\n", i + 1, p[i].at, p[i].bt, p[i].ct, p[i].tat, 
 p[i].wt);
  }
+Average_display(p, n);
+}
+
+void Average_display(struct process p[], int n){
+float avg_wt = 0, avg_tat = 0; 
+for (int i = 0; i < n; i++) {
+        avg_wt += p[i].wt;
+        avg_tat += p[i].tat;
+    }
+    avg_wt /= n;
+    avg_tat /= n;
+
+printf("Average Waiting Time: %.2f\n", avg_wt);
+printf("Average Turnaround Time: %.2f\n", avg_tat);
+    
+
 }
 int main()
 {
  int i, n,ch;
+
  printf("\nEnter the number of Processes: ");
  scanf("%d", &n);
  struct process p[n];
@@ -61,8 +81,8 @@ int main()
  
  while (1)
  {
- printf("\n1.Find\n2.Display\n3. Display in Tabular form\n4.Exit");
- printf("\n Enter your choice");
+ printf("\n1.Find\n2.Display\n3.Display in Tabular form\n4.Average tot and wt\n5.Exit");
+ printf("\n Enter your choice : ");
  scanf("%d", &ch);
  switch (ch)
  {
@@ -76,6 +96,9 @@ find(p, n);
  tablewise_display(p, n);
  break;
  case 4:
+Average_display(p, n);
+ break;
+ case 5:
  exit(0);
  }
  }
