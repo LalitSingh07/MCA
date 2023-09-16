@@ -14,11 +14,16 @@ void find(struct process p[], int n)
  p[0].ct = p[0].at + p[0].bt;
  p[0].tat = p[0].ct - p[0].at;
  p[0].wt = p[0].tat - p[0].bt;
+
+ 
  for (int i = 1; i < n; i++)
  {
- p[i].ct = p[i - 1].ct + p[i].bt; 
- p[i].tat = p[i].ct - p[i].at; 
- p[i].wt = p[i].tat - p[i].bt; 
+    int sum= p[i-1];
+    for (int j =0; j <= sum;j++)
+    {
+        
+    }
+
  }
 }
 
