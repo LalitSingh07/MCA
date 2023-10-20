@@ -1,6 +1,6 @@
 #include <stdio.h>
-void calcAvgTime(int processes[], int n, int bt[], int at[]) {
-    int wt[n], tat[n],ct[n];
+void calc(int processes[], int n, int bt[], int at[]) {
+int wt[n], tat[n],ct[n];
 
  ct[0] = bt[0]; 
  tat[0] = ct[0] - at[0];
@@ -31,10 +31,7 @@ void calcAvgTime(int processes[], int n, int bt[], int at[]) {
 
 
 int main() {
-  int i, j, n, temp;
-  int arrival_time[100];
-  int burst_time[100];
-  int processes[100];
+  int i, j, n, temp,arrival_time[100],burst_time[100], processes[100];
 
   printf("Enter the number of processes: ");
   scanf("%d", &n);
@@ -87,7 +84,7 @@ int main() {
     }
   }
 
-  calcAvgTime(processes, n, burst_time, arrival_time);
+  calc(processes, n, burst_time, arrival_time);
 
 
   return 0;

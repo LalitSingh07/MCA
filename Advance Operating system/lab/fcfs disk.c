@@ -2,7 +2,7 @@
 #include <math.h>
 int main()
 {
- int r, s, seektime=0,cal,qu[8];
+ int r, s, seektime=0,cal,qu[r];
  printf("\nEnter the Requests:");
  scanf("%d", &r);
  for (int i = 0; i < r; i++)

@@ -1,7 +1,12 @@
 #include <stdio.h>
 
-void main() {
-  int n = 9, div = 0;
-  div = n / 0; // Runtime error
-  printf("result = %d", div);
+int main(){
+  int n,i;
+  printf("enter the number of processes:");
+  scanf("%d",&n);
+  for(i=0;i<n;i++){
+    printf("process no : %d\n",i);
+    printf("enter the arrival time " );
+    printf("process no : %d\n",i);
+  }
 }
