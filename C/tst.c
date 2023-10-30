@@ -1,14 +1,18 @@
 #include <stdio.h>
 
 int main() {
- int p=9,q=15,r=16,s=12,t,u;
- t =!(p<q||q<r);
- u=(p>q)?p-q:q-p;
- 
- printf("%d",t);
- printf("%d",u);
-//  printf("%d",t);
- return 0;
+
+  int a,b,c,d,e,f,g,h,i,j,k,l,m,n,o;
+  a=b=c=d=e=f=g=h=i=j=k=l=m=n=o=10;
+  printf("%d",a);
+  printf("%d",b);
+  printf("%d",c);
+  printf("%d",f);
+  printf("%d",h);
+  printf("%d",o);
 
 
+  
+
+  return 0;
 }
