@@ -6,12 +6,10 @@ int fact(int n){
         facto *=i;
     }
     return facto;
-
 }
 void main(){
     int n;
     printf("enter the number ");
     scanf("%d",&n);
     printf("the factorial of %d is %d", n,fact(n));
-  
 }
