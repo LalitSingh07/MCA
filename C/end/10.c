@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-int count_characters_digits(char string[]) {
-  int char_count = 0, digit_count = 0;
+void count(char string[]) {
+  int char_count = 0, digit_count = 0,flag=1;
   for (int i = 0; string[i] != '\0'; i++) {
     if (string[i] >= 'a' && string[i] <= 'z' || string[i] >= 'A' && string[i] <= 'Z') {
       char_count++;
@@ -9,33 +9,33 @@ int count_characters_digits(char string[]) {
       digit_count++;
     }
   }
-  return char_count + digit_count;
-}
-
-int is_palindrome(char string[]) {
+  printf("the number of alphabet is %d\n",char_count);
+  printf("the number of digit is %d\n",digit_count);
   int length = strlen(string);
   for (int i = 0; i < length / 2; i++) {
     if (string[i] != string[length - 1 - i]) {
-      return 0;
+      flag =0;
+      
     }
   }
-  return 1;
+
+  if(flag){
+    printf("string is palindrome\n");
+
+  }else{
+    printf("string is not palindrome\n");
+  }
 }
+
+
 
 int main() {
   char string[100];
   printf("Enter the string: ");
-  scanf("%s", string);
+  scanf("%s", &string);
 
-  int count = count_characters_digits(string);
-  printf("The number of characters and digits in the string is: %d\n", count);
-
-  int is_pal = is_palindrome(string);
-  if (is_pal) {
-    printf("%s is a palindrome.\n", string);
-  } else {
-    printf("%s is not a palindrome.\n", string);
-  }
+count(string);
+ 
 
   return 0;
 }

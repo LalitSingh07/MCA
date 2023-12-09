@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-int transp(int x,int mat[x][x]){
+int sum(int x,int mat[x][x]){
     int i,sum=0;
      for(i=0;i<x;i++){
         sum += mat[i][i];
@@ -19,13 +19,6 @@ int main(){
             scanf("%d",&mat[i][j]);
         }
     }
-    printf("entered matrix is :\n");
-    for(i=0;i<x;i++){
-        for(j=0;j<x;j++){
-            printf("%d\t",mat[i][j]);
-        }
-        printf("\n");
-    }
-    printf("the sum of diagonals is %d",transp(x,mat));
+    printf("the sum of diagonals is %d",sum(x,mat));
 
 }
