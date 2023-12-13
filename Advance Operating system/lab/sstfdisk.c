@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define max 1000
-// finding minimum distance
+
 int find_min_dist(int r[], int n, int head) {
  int min_dist = max;
  int index = -1;
@@ -32,7 +32,7 @@ printf("\nEnter the head position: ");
  printf("%d ", r[index]);
  totalmovement = totalmovement + abs(r[index] - h);
  h = r[index];
- r[index] = max; // visited
+ r[index] = max; 
  }
  printf("\nTotal movement: %d", totalmovement);
  return 0;

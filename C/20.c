@@ -1,16 +1,11 @@
-#include<stdio.h>  
-#include<conio.h>  
-void main() {  
-   float x,y;
-   printf("enter the value of x");
-   scanf("%f",&x);
-   if (x <= 1){
-    y = 1.2 * x +0.98;
-   }else{
-     y = 1.7 * x +0.09;
-   }
-   printf("y = %.2f",y);
-   
-   
+#include<stdio.h>
+int main(){
+  int x,y,sum;
+  printf("hello\n");
+  x= 20;
+  y=20;
+  sum =x+y;
+  printf("%d",sum);
+  return 0;
 
-}  
+}

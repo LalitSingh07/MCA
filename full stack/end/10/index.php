@@ -20,7 +20,6 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Retrieve records from the database
     $selectQuery = "SELECT * FROM users";
     $result = $conn->query($selectQuery);
 
