@@ -22,7 +22,6 @@ void storeStudentData(struct Student student) {
   fprintf(fp, "%s\n", student.address);
   fprintf(fp, "%s\n", student.city);
   fprintf(fp, "%s\n", student.state);
-
   fclose(fp);
 }
 
