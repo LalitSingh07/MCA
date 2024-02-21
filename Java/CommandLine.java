@@ -1,5 +1,6 @@
 public class CommandLine {
     static int num1,num2,Ans;  
+      
     public static void main(String[] args) {
         String str1; 
         num1 = Integer.parseInt(args[0]);
