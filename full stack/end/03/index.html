@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Bio-data Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    form {
+      max-width: 400px;
+      margin: auto;
+      background-color: rgb(45, 143, 160);
+      border-radius: 10px;
+      padding: 40px;
+    }
+    label {
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    .inputclass{
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button[type="reset"] {
+      background-color: #f44336;
+    }
+    form p{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    p input{
+      margin-right: 200px;
+    }
+    #head{
+     
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <form action="#" method="post">
+    <h1 id="head">Student Bio Data</h1>
+    <label for="name"><h2>Name</h2></label>
+    <input type="text" class="inputclass" id="name" name="name" required>
+
+    <label for="address"><h2>Address</h2></label>
+    <textarea id="address" class="inputclass" name="address" rows="4" required></textarea>
+
+    <label><h2>Gender</h2></label>
+    <p>
+      <label for="male">Male</label>
+      <input type="radio" id="male"  name="gender" value="male" required>  
+    </p>
+ <p>
+  <label for="female">Female</label>
+  <input type="radio" id="female" name="gender" value="female" required>
+
+ </p>
+    <label><h2>Skill Sets Known:</h2></label>
+    <p> 
+      <label for="c">C</label>
+      <input type="checkbox"  id="c" name="skills" value="C">
+    </p>
+   <p>
+     <label for="cpp">C++</label>
+    <input type="checkbox" id="cpp" name="skills" value="C++">
+   </p>
+   <p>
+     <label for="java">Java</label>
+    <input type="checkbox" id="java" name="skills" value="Java">
+   </p>
+   <p>
+     <label for="csharp">C#</label>
+    <input type="checkbox"  id="csharp" name="skills" value="C#">
+   </p>
+
+
+
+    <label for="extracurricular"><h2>Extracurricular Activities</h2></label>
+    <textarea id="extracurricular" class="inputclass" name="extracurricular" rows="4"></textarea>
+
+    <label for="nationality"><h2>Nationality</h2></label>
+    <select id="nationality" class="inputclass" name="nationality" required>
+      <option value="select">Select</option>
+      <option value="us">United States</option>
+      <option value="uk">United Kingdom</option>
+      <option value="india">India</option>
+    </select>
+
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+  </form>
+
+</body>
+</html>

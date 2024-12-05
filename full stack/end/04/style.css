@@ -1,0 +1,47 @@
+*{
+    color: black;
+}
+.topnav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+ 
+    }
+.topul{
+    display: flex;
+    flex-direction: row;
+    margin-left: 22rem;
+
+    }
+.topul li{
+    margin-left: 40px;
+    font-size: 30px;
+    }
+nav img{
+width: 100px;
+height: 100px;
+}
+h1{
+font-size: 45px;
+
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+a{
+text-decoration: none;
+}
+p{
+    font-size: 30px;
+    padding: 20px;
+    text-align: justify;
+}
+.leftnav{
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    align-items: center;
+}
+
+    
